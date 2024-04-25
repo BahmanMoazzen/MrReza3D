@@ -9,11 +9,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject _timeUpObject;
     [SerializeField] GameObject _winObject;
     [SerializeField] GameObject _resetObject;
+    [SerializeField] GameObject _resetView;
     bool _gameWon = false;
     bool _gameLost = false;
     private void Start()
     {
-        StartCoroutine(_startRoutine());    
+        StartCoroutine(_startRoutine());
     }
 
     IEnumerator _startRoutine()
@@ -31,12 +32,19 @@ public class GameManager : MonoBehaviour
         TimePanelController.OnTimeUp -= TimePanelController_OnTimeUp;
         HealthPanelController.OnHealthDeplited -= HealthPanelController_OnHealthDeplited;
         RezaController.OnGameWon -= RezaController_OnGameWon;
+        ThirdPersonMovementController.OnViewChanged -= ThirdPersonMovementController_OnViewChanged;
     }
     private void OnEnable()
     {
+        ThirdPersonMovementController.OnViewChanged += ThirdPersonMovementController_OnViewChanged;
         TimePanelController.OnTimeUp += TimePanelController_OnTimeUp;
         HealthPanelController.OnHealthDeplited += HealthPanelController_OnHealthDeplited;
         RezaController.OnGameWon += RezaController_OnGameWon;
+    }
+
+    private void ThirdPersonMovementController_OnViewChanged(bool iIsIdentity)
+    {
+        _resetView.SetActive(!iIsIdentity);
     }
 
     private void RezaController_OnGameWon()

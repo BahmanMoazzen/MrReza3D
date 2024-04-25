@@ -14,7 +14,7 @@ public class LoaderSceneManager : MonoBehaviour
         do
         {
             yield return 0;
-            _percentageLoadedText.text = $"{ Mathf.Round(AO.progress * 100).ToString()} %";
+            _percentageLoadedText.text = $"{ Mathf.Round(AO.progress * 100)} %";
         } while (!AO.isDone);
         
         _LoaderPanel.SetActive(false);
