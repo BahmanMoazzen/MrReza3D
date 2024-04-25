@@ -40,6 +40,7 @@ public class BAHMANBackButtonManager : MonoBehaviour
 
     //}
 
+    KeyBindings _keyBinding;
 
     void Awake()
     {
@@ -51,28 +52,46 @@ public class BAHMANBackButtonManager : MonoBehaviour
         {
             DontDestroyOnLoad(this.gameObject);
         }
+
+        _keyBinding = new KeyBindings();
     }
     void OnEnable()
     {
-
+        _keyBinding.Player.Back.performed += Back_performed;
+        _keyBinding.Player.Enable();
         _BackPanel.SetActive(false);
     }
-    void Update()
+
+    private void Back_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (_BackPanel.activeInHierarchy)
         {
-            if (_BackPanel.activeInHierarchy)
-            {
-                if (!_SilentMode) _BackPanel.SetActive(false);
-                OnBackButtonMenuHide?.Invoke();
-            }
-            else
-            {
-                if (!_SilentMode) _BackPanel.SetActive(true);
-                OnBackButtonMenuShowed?.Invoke();
-            }
+            if (!_SilentMode) _BackPanel.SetActive(false);
+            OnBackButtonMenuHide?.Invoke();
+        }
+        else
+        {
+            if (!_SilentMode) _BackPanel.SetActive(true);
+            OnBackButtonMenuShowed?.Invoke();
         }
     }
+
+    //void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Escape))
+    //    {
+    //        if (_BackPanel.activeInHierarchy)
+    //        {
+    //            if (!_SilentMode) _BackPanel.SetActive(false);
+    //            OnBackButtonMenuHide?.Invoke();
+    //        }
+    //        else
+    //        {
+    //            if (!_SilentMode) _BackPanel.SetActive(true);
+    //            OnBackButtonMenuShowed?.Invoke();
+    //        }
+    //    }
+    //}
     public void _ShowMenu()
     {
         _BackPanel.SetActive(true);

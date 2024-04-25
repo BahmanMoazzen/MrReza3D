@@ -283,6 +283,10 @@ PrefabInstance:
       propertyPath: m_ReferenceResolution.x
       value: 1056
       objectReference: {fileID: 0}
+    - target: {fileID: 4301338575341637779, guid: 5212918ef7960e24f8c1da38ce474c31, type: 3}
+      propertyPath: m_VertexColorAlwaysGammaSpace
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4301338575395906087, guid: 5212918ef7960e24f8c1da38ce474c31, type: 3}
       propertyPath: m_Color.b
       value: 0.4784314
@@ -459,6 +463,10 @@ PrefabInstance:
     - target: {fileID: 4531125330470814069, guid: da7653545e3aa3745a0a08aad9f3bdc3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4579980981313373905, guid: da7653545e3aa3745a0a08aad9f3bdc3, type: 3}
+      propertyPath: m_VertexColorAlwaysGammaSpace
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4783173356684085679, guid: da7653545e3aa3745a0a08aad9f3bdc3, type: 3}
       propertyPath: m_EffectColor.a
@@ -668,6 +676,10 @@ PrefabInstance:
     - target: {fileID: 7663987526509844816, guid: 6e8e4487785639f45894cec826bfa353, type: 3}
       propertyPath: m_ReferenceResolution.x
       value: 1056
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663987526509844817, guid: 6e8e4487785639f45894cec826bfa353, type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7663987526509844821, guid: 6e8e4487785639f45894cec826bfa353, type: 3}
       propertyPath: m_Name
@@ -910,6 +922,10 @@ PrefabInstance:
       propertyPath: m_EffectColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6705668056400874876, guid: 0ed69897a3c42ad4f91cecc81fdff9f2, type: 3}
+      propertyPath: _HomeSceneName
+      value: TitleScreen
+      objectReference: {fileID: 0}
     - target: {fileID: 6998420582385890119, guid: 0ed69897a3c42ad4f91cecc81fdff9f2, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -953,6 +969,14 @@ PrefabInstance:
     - target: {fileID: 7346566440949662399, guid: 0ed69897a3c42ad4f91cecc81fdff9f2, type: 3}
       propertyPath: m_Color.r
       value: 0.23137257
+      objectReference: {fileID: 0}
+    - target: {fileID: 7417621187460873757, guid: 0ed69897a3c42ad4f91cecc81fdff9f2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7417621187460873757, guid: 0ed69897a3c42ad4f91cecc81fdff9f2, type: 3}
+      propertyPath: m_VertexColorAlwaysGammaSpace
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8509007685087656450, guid: 0ed69897a3c42ad4f91cecc81fdff9f2, type: 3}
       propertyPath: m_Name
