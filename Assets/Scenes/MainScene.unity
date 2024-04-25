@@ -6,7 +6,7 @@ OcclusionCullingSettings:
   serializedVersion: 2
   m_OcclusionBakeSettings:
     smallestOccluder: 1
-    smallestHole: 0.25
+    smallestHole: 0.2
     backfaceThreshold: 100
   m_SceneGUID: 0b0f5d75cd3fea64a9bcc100dce7914c
   m_OcclusionCullingData: {fileID: 36300000, guid: 2a5948812bc8aa14a95701fde80997fe, type: 2}
@@ -3528,8 +3528,8 @@ OcclusionArea:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 99929344}
   serializedVersion: 2
-  m_Size: {x: 25.054901, y: 21.629436, z: 17.086596}
-  m_Center: {x: -8.795553, y: 10.314718, z: 0.14364195}
+  m_Size: {x: 25.054901, y: 8.960062, z: 17.086596}
+  m_Center: {x: -8.795553, y: 3.98003, z: 0.14364195}
   m_IsViewVolume: 1
 --- !u!4 &99929346
 Transform:
@@ -11267,6 +11267,71 @@ Transform:
   - {fileID: 572615055}
   m_Father: {fileID: 1262647243}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &373119297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 373119299}
+  - component: {fileID: 373119298}
+  m_Layer: 0
+  m_Name: Reflection Probe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!215 &373119298
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373119297}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 0
+  m_RefreshMode: 0
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 4.7731485, y: 3.777204, z: 4.379368}
+  m_BoxOffset: {x: -0.45867205, y: 0.5802362, z: 0.34634876}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
+--- !u!4 &373119299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373119297}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.295562, y: 1.426188, z: 5.708371}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1872869525}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &386917926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12842,6 +12907,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1876399403}
+    - target: {fileID: 1986177358333435500, guid: 381940083dbe46a4e9c8507ac9fe6417, type: 3}
+      propertyPath: m_ControlPath
+      value: <Gamepad>/rightStickPress
+      objectReference: {fileID: 0}
     - target: {fileID: 3129327194885316262, guid: 381940083dbe46a4e9c8507ac9fe6417, type: 3}
       propertyPath: m_Name
       value: ThirdPersonUI
@@ -12940,7 +13009,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8956406624117437531, guid: 381940083dbe46a4e9c8507ac9fe6417, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8956406624117437531, guid: 381940083dbe46a4e9c8507ac9fe6417, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -12953,6 +13022,10 @@ PrefabInstance:
     - target: {fileID: 8956406624117437531, guid: 381940083dbe46a4e9c8507ac9fe6417, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8956406624117437531, guid: 381940083dbe46a4e9c8507ac9fe6417, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 8956406624117437531, guid: 381940083dbe46a4e9c8507ac9fe6417, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -54774,6 +54847,7 @@ Transform:
   - {fileID: 366221452}
   - {fileID: 1607812262}
   - {fileID: 175996383}
+  - {fileID: 373119299}
   - {fileID: 1311470089}
   - {fileID: 1803106467}
   m_Father: {fileID: 2111041426}
