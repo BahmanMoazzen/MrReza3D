@@ -9,15 +9,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
-
+public enum GameScenes { TitleScreen = 1,Loader =2, MainGame = 3 };
 public class BAHMANLoadingManager : MonoBehaviour
 {
-    
-    
+
+
     // instance to call Load manager
     public static BAHMANLoadingManager _INSTANCE;
 
-    
+
 
     // public procedures which shoud be replaced by unity load scene
     public void _LoadScene(int iSceneIndex)
@@ -36,6 +36,9 @@ public class BAHMANLoadingManager : MonoBehaviour
     {
         _HideLoadPanel();
     }
+    [SerializeField] bool _changeSceneAfterLoaded = false;
+    [SerializeField] GameScenes _afterLoadedNextScene;
+
 
     #region private
 
@@ -98,7 +101,7 @@ public class BAHMANLoadingManager : MonoBehaviour
         yield return 0;
         _ShowLoadPanel();
         yield return 0;
-        AsyncOperation asyncLoad =  SceneManager.LoadSceneAsync(iSceneIndex, LoadSceneMode.Single);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(iSceneIndex, LoadSceneMode.Single);
         _LoadingSlider.SetActive(true);
         while (!asyncLoad.isDone)
         {
@@ -132,6 +135,11 @@ public class BAHMANLoadingManager : MonoBehaviour
     void _HideLoadPanel()
     {
         _LoadPanel.SetActive(false);
+    }
+    private void Start()
+    {
+        if (_changeSceneAfterLoaded)
+            _LoadScene((int)_afterLoadedNextScene);
     }
 
 

@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -71,6 +70,6 @@ public class GameManager : MonoBehaviour
     }
     public void _ResetGame()
     {
-        SceneManager.LoadScene(0);
+        BAHMANLoadingManager._INSTANCE._LoadScene((int)GameScenes.TitleScreen);
     }
 }

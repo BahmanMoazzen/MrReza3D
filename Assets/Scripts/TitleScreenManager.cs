@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class TitleScreenManager : MonoBehaviour
 {
@@ -7,6 +6,6 @@ public class TitleScreenManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("DL", iDifficultyLevel);
 
-        SceneManager.LoadScene(1);
+        BAHMANLoadingManager._INSTANCE._LoadScene((int)GameScenes.Loader);
     }
 }
