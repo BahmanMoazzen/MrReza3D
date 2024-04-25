@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -25,6 +25,12 @@ public class GameManager : MonoBehaviour
         _mapObject.SetActive(true);
         yield return new WaitForSeconds(3.5f);
         _mapObject.SetActive(false);
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage("به بازی آقارضا خوش آمدید!",Color.white,2f);
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage("توی این بازی شما باید آقارضا رو بیدار کنید و نذارید به خواب مرگ فرو بره!",Color.white,3.5f);
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage("باید دائم صداش کنید!",Color.white,2f);
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage("در حالی که صداش می کنید باید توی آپارتمان بگردی و پیداش کنی تا برنده بازی بشی.",Color.white,4f);
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage("زمانت محدوده، پس دست بجنبون.",Color.white,2.5f);
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage("تو پیدا کردنش موفق باشی.",Color.white,1.5f);
     }
 
     private void OnDisable()

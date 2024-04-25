@@ -681,6 +681,22 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 7663987526509844818, guid: 6e8e4487785639f45894cec826bfa353, type: 3}
+      propertyPath: _MessageText
+      value: 
+      objectReference: {fileID: 656983528}
+    - target: {fileID: 7663987526509844818, guid: 6e8e4487785639f45894cec826bfa353, type: 3}
+      propertyPath: _DefaultColor.b
+      value: 0.82745105
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663987526509844818, guid: 6e8e4487785639f45894cec826bfa353, type: 3}
+      propertyPath: _DefaultColor.g
+      value: 0.9568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 7663987526509844818, guid: 6e8e4487785639f45894cec826bfa353, type: 3}
+      propertyPath: _DefaultColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7663987526509844821, guid: 6e8e4487785639f45894cec826bfa353, type: 3}
       propertyPath: m_Name
       value: BAHMANMessageBox
@@ -713,11 +729,72 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8078432
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8148317923102390871, guid: 6e8e4487785639f45894cec826bfa353, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7663987527393357173, guid: 6e8e4487785639f45894cec826bfa353, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 656983528}
+    - targetCorrespondingSourceObject: {fileID: 7663987527393357173, guid: 6e8e4487785639f45894cec826bfa353, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 656983527}
   m_SourcePrefab: {fileID: 100100000, guid: 6e8e4487785639f45894cec826bfa353, type: 3}
+--- !u!1 &656983526 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7663987527393357173, guid: 6e8e4487785639f45894cec826bfa353, type: 3}
+  m_PrefabInstance: {fileID: 656983525}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &656983527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656983526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.23137257, g: 0.25882354, b: 0.3803922, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &656983528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656983526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4bde79e34a564d4180a115864f98c20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.9568628, b: 0.82745105, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 9e6befce6c4effc40b89fd5bfedf3966, type: 3}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 25
+    m_Alignment: 4
+    m_AlignByGeometry: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Message Box
 --- !u!1001 &1337960913
 PrefabInstance:
   m_ObjectHideFlags: 0
