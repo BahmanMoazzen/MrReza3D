@@ -29,6 +29,11 @@ public class ThirdPersonMovementController : MonoBehaviour
     /// this event invokes when ThirdPersonController inites in the game and passes the LookAt transform to the consumer
     /// </summary>
     public static event UnityAction<Transform> OnCharacterLoaded;
+    /// <summary>
+    /// fires everytime player view changes
+    /// </summary>
+    public static event UnityAction<bool> OnViewChanged;
+
     [Header("Movement Parmeter")]
     [SerializeField] float _backFrontSpeed = 3f;
     [SerializeField] float _runSpeed = 5f;
@@ -57,6 +62,8 @@ public class ThirdPersonMovementController : MonoBehaviour
     [Header("Audio")]
     [SerializeField] AudioSource _audioSource;
     [SerializeField] AudioClip[] _audioClips;
+
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -175,7 +182,14 @@ public class ThirdPersonMovementController : MonoBehaviour
     {
         _yRotation += _rotationSpeed * Time.deltaTime * iMovementAmount.x;
         _lookAtTransform.localRotation = Quaternion.Euler(new Vector3(_tilt(iMovementAmount.y), _yRotation, 0));// +Quaternion.Euler(new Vector3(0,_lookAtTransform.rotation.y,_lookAtTransform.rotation.z));
-
+        if(_lookAtTransform.localRotation == Quaternion.identity)
+        {
+            OnViewChanged?.Invoke(true);
+        }
+        else
+        {
+            OnViewChanged?.Invoke(false);
+        }
 
     }
     public void _ResetLook()

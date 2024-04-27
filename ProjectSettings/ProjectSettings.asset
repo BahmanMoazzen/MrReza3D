@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: Helen Game Factory
-  productName: Mr Reza (3D)
+  productName: "\u0622\u0642\u0627 \u0631\u0636\u0627 (3D)"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
@@ -140,7 +140,7 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: 1.5
+  bundleVersion: 1.6
   preloadedAssets:
   - {fileID: 2800000, guid: 06b42482fb385234f8fd5b08b8876366, type: 3}
   - {fileID: 2800000, guid: 669afb5abf19983439f0e1809b6d2f8c, type: 3}
@@ -167,6 +167,8 @@ PlayerSettings:
   - {fileID: 2800000, guid: 95d07291ed5600941afd6bc42b30a7bc, type: 3}
   - {fileID: 2800000, guid: a9598b40a3e1f9e4781ea7146f634d75, type: 3}
   - {fileID: 2800000, guid: 26257823007949a4cbd5fd2c4fd14bb5, type: 3}
+  - {fileID: 102900000, guid: 39f8a5732a15f774e8d434c1ce70a764, type: 3}
+  - {fileID: 102900000, guid: 70c9953c863f3134bb03bd25798e45c4, type: 3}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -196,9 +198,9 @@ PlayerSettings:
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
-  AndroidBundleVersionCode: 5
+  AndroidBundleVersionCode: 6
   AndroidMinSdkVersion: 25
-  AndroidTargetSdkVersion: 33
+  AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 0
   aotOptions: 
   stripEngineCode: 0
@@ -289,7 +291,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 1
   AndroidTargetDevices: 1
   AndroidSplashScreenScale: 0
-  androidSplashScreen: {fileID: 0}
+  androidSplashScreen: {fileID: 2800000, guid: 06b42482fb385234f8fd5b08b8876366, type: 3}
   AndroidKeystoreName: '{dedicated}: bmoazzen.jks'
   AndroidKeyaliasName: b.moazzen
   AndroidEnableArmv9SecurityFeatures: 0
@@ -923,7 +925,7 @@ PlayerSettings:
   il2cppCodeGeneration: {}
   il2cppStacktraceInformation: {}
   managedStrippingLevel:
-    Android: 0
+    Android: 3
     EmbeddedLinux: 1
     GameCoreScarlett: 1
     GameCoreXboxOne: 1

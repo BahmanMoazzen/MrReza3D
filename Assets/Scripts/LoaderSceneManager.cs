@@ -10,11 +10,11 @@ public class LoaderSceneManager : MonoBehaviour
     [SerializeField] Text _percentageLoadedText;
     IEnumerator _loadRoutine()
     {
-        AsyncOperation AO = SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
+        AsyncOperation AO = SceneManager.LoadSceneAsync((int)GameScenes.MainGame, LoadSceneMode.Additive);
         do
         {
             yield return 0;
-            _percentageLoadedText.text = $"{ Mathf.Round(AO.progress * 100).ToString()} %";
+            _percentageLoadedText.text = $"{ Mathf.Round(AO.progress * 100)} %";
         } while (!AO.isDone);
         
         _LoaderPanel.SetActive(false);

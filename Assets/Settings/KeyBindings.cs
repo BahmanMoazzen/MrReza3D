@@ -89,6 +89,15 @@ public partial class @KeyBindings: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Back"",
+                    ""type"": ""Button"",
+                    ""id"": ""a9c783bd-a550-4269-8c3c-4f30f568990f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -421,6 +430,50 @@ public partial class @KeyBindings: IInputActionCollection2, IDisposable
                     ""action"": ""ResetLook"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""095ed2f3-529b-4fa4-89b6-4a74c98f1d10"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Back"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""072b4428-14c6-405f-8e0d-c6ea32058eda"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Back"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a33aaf93-a3fb-413e-8002-0b1fef903ddb"",
+                    ""path"": ""<Mouse>/{Back}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Back"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e26b0d9-d045-4e4f-a6a0-909dd5e05f39"",
+                    ""path"": ""<Touchscreen>/{Back}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Back"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -464,6 +517,7 @@ public partial class @KeyBindings: IInputActionCollection2, IDisposable
         m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
         m_Player_SpecialMove = m_Player.FindAction("SpecialMove", throwIfNotFound: true);
         m_Player_ResetLook = m_Player.FindAction("ResetLook", throwIfNotFound: true);
+        m_Player_Back = m_Player.FindAction("Back", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Newaction = m_UI.FindAction("New action", throwIfNotFound: true);
@@ -535,6 +589,7 @@ public partial class @KeyBindings: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Run;
     private readonly InputAction m_Player_SpecialMove;
     private readonly InputAction m_Player_ResetLook;
+    private readonly InputAction m_Player_Back;
     public struct PlayerActions
     {
         private @KeyBindings m_Wrapper;
@@ -546,6 +601,7 @@ public partial class @KeyBindings: IInputActionCollection2, IDisposable
         public InputAction @Run => m_Wrapper.m_Player_Run;
         public InputAction @SpecialMove => m_Wrapper.m_Player_SpecialMove;
         public InputAction @ResetLook => m_Wrapper.m_Player_ResetLook;
+        public InputAction @Back => m_Wrapper.m_Player_Back;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -576,6 +632,9 @@ public partial class @KeyBindings: IInputActionCollection2, IDisposable
             @ResetLook.started += instance.OnResetLook;
             @ResetLook.performed += instance.OnResetLook;
             @ResetLook.canceled += instance.OnResetLook;
+            @Back.started += instance.OnBack;
+            @Back.performed += instance.OnBack;
+            @Back.canceled += instance.OnBack;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -601,6 +660,9 @@ public partial class @KeyBindings: IInputActionCollection2, IDisposable
             @ResetLook.started -= instance.OnResetLook;
             @ResetLook.performed -= instance.OnResetLook;
             @ResetLook.canceled -= instance.OnResetLook;
+            @Back.started -= instance.OnBack;
+            @Back.performed -= instance.OnBack;
+            @Back.canceled -= instance.OnBack;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -673,6 +735,7 @@ public partial class @KeyBindings: IInputActionCollection2, IDisposable
         void OnRun(InputAction.CallbackContext context);
         void OnSpecialMove(InputAction.CallbackContext context);
         void OnResetLook(InputAction.CallbackContext context);
+        void OnBack(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
