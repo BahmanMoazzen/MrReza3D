@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject _winObject;
     [SerializeField] GameObject _resetObject;
     [SerializeField] GameObject _resetView;
+    [SerializeField] TimePanelController _timePanelController;
+    [SerializeField] HealthPanelController _healthPanelController;
     bool _gameWon = false;
     bool _gameLost = false;
     private void Start()
@@ -60,6 +62,7 @@ public class GameManager : MonoBehaviour
             _gameWon = true;
             _winObject.SetActive(true);
             _resetObject.SetActive(true);
+            _timePanelController.enabled = _healthPanelController.enabled = false;
         }
     }
 
@@ -70,6 +73,7 @@ public class GameManager : MonoBehaviour
             _gameOverObject.SetActive(true);
             _resetObject.SetActive(true);
             _gameLost = true;
+            _timePanelController.enabled = _healthPanelController.enabled = false;
         }
     }
 
@@ -80,6 +84,7 @@ public class GameManager : MonoBehaviour
             _timeUpObject.SetActive(true);
             _resetObject.SetActive(true);
             _gameLost = true;
+            _timePanelController.enabled = _healthPanelController.enabled = false;
         }
     }
     public void _ResetGame()
