@@ -57,12 +57,15 @@ public class GameManager : MonoBehaviour
 
     private void RezaController_OnGameWon()
     {
-        if (!_gameLost && !_gameLost)
+        if (!_gameWon && !_gameLost)
         {
             _gameWon = true;
             _winObject.SetActive(true);
             _resetObject.SetActive(true);
             _timePanelController.enabled = _healthPanelController.enabled = false;
+            BAHMANMessageBoxManager._INSTANCE._ShowMessage("آقا رضا بیدار شد!", Color.white, 1.5f);
+            BAHMANMessageBoxManager._INSTANCE._ShowMessage("شما برنده شدید!", Color.white, 1.5f);
+            BAHMANMessageBoxManager._INSTANCE._ShowMessage("اگه دوست داشتی سختی های دیگه رو امتحان کن", Color.white, 2.5f);
         }
     }
 
@@ -74,6 +77,10 @@ public class GameManager : MonoBehaviour
             _resetObject.SetActive(true);
             _gameLost = true;
             _timePanelController.enabled = _healthPanelController.enabled = false;
+            BAHMANMessageBoxManager._INSTANCE._ShowMessage("متأسفانه آقا رضا مرد!", Color.white, 2f);
+            BAHMANMessageBoxManager._INSTANCE._ShowMessage("شما باختید!", Color.white, 1.5f);
+            BAHMANMessageBoxManager._INSTANCE._ShowMessage("دوباره امتحان کن", Color.white, 2.5f);
+            
         }
     }
 
@@ -85,6 +92,9 @@ public class GameManager : MonoBehaviour
             _resetObject.SetActive(true);
             _gameLost = true;
             _timePanelController.enabled = _healthPanelController.enabled = false;
+            BAHMANMessageBoxManager._INSTANCE._ShowMessage("زمانت به پایان رسید!", Color.white, 2f);
+            BAHMANMessageBoxManager._INSTANCE._ShowMessage("شما باختید!", Color.white, 1.5f);
+            BAHMANMessageBoxManager._INSTANCE._ShowMessage("دوباره امتحان کن", Color.white, 2.5f);
         }
     }
     public void _ResetGame()
