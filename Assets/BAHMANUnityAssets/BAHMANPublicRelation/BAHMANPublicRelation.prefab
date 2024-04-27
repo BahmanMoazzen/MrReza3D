@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.30980393, g: 0, b: 0.043137256, a: 1}
+  m_Color: {r: 0.8078432, g: 0.30588236, b: 0.2784314, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -67,13 +67,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1e0fecef0c3dd1e41a3ece4f9bfe4f8a, type: 3}
+    m_Font: {fileID: 12800000, guid: 9e6befce6c4effc40b89fd5bfedf3966, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 25
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.14509805, g: 0, b: 0.003921569, a: 1}
+  m_EffectColor: {r: 0.96470594, g: 0.44705886, b: 0.41960788, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!1 &434923028802069805
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9882353, g: 0.7294118, b: 0.015686275, a: 1}
+  m_Color: {r: 0.9686275, g: 0.80392164, b: 0.4784314, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9882353, g: 0.7294118, b: 0.015686275, a: 1}
+  m_Color: {r: 1, g: 0.9568628, b: 0.82745105, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -241,7 +241,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1e0fecef0c3dd1e41a3ece4f9bfe4f8a, type: 3}
+    m_Font: {fileID: 12800000, guid: 9e6befce6c4effc40b89fd5bfedf3966, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectColor: {r: 0.96470594, g: 0.44705886, b: 0.41960788, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!1 &5094048995712690916
@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.14509805, g: 0, b: 0.003921569, a: 1}
+  m_Color: {r: 0.8078432, g: 0.30588236, b: 0.2784314, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -449,7 +449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9882353, g: 0.7294118, b: 0.015686275, a: 1}
+  m_Color: {r: 1, g: 0.9568628, b: 0.82745105, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -457,7 +457,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1e0fecef0c3dd1e41a3ece4f9bfe4f8a, type: 3}
+    m_Font: {fileID: 12800000, guid: 9e6befce6c4effc40b89fd5bfedf3966, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -482,7 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectColor: {r: 0.23137257, g: 0.25882354, b: 0.3803922, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
 --- !u!1 &7151882458078286805
@@ -542,7 +542,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -563,7 +563,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 960, y: 480}
+  m_ReferenceResolution: {x: 1056, y: 480}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
@@ -606,25 +606,16 @@ MonoBehaviour:
   _messageBox: {fileID: 434923028802069805}
   _PRTitle:
   - Title: "\u0627\u0631\u0633\u0627\u0644 \u0628\u0631\u0627\u06CC \u062F\u06CC\u06AF\u0631\u0627\u0646"
-    Message: "\u0627\u06AF\u0647 \u0627\u0632 \u0627\u06CC\u0646 \u0628\u0631\u0646\u0627\u0645\u0647
+    Message: "\u0627\u06AF\u0647 \u0627\u0632 \u0627\u06CC\u0646 \u0628\u0627\u0632\u06CC
       \u062E\u0648\u0634\u062A \u0627\u0648\u0645\u062F\u0647 \u0644\u0637\u0641\u0627
       \u0628\u0631\u0627\u06CC \u062F\u06CC\u06AF\u0631\u0627\u0646 \u0627\u0631\u0633\u0627\u0644
-      \u06A9\u0646! \u062A\u0648\u062C\u0647 \u0628\u0641\u0631\u0645\u0627\u06CC\u06CC\u062F
-      \u06A9\u0647 \u0627\u06CC\u0646 \u0628\u0631\u0646\u0627\u0645\u0647 \u06A9\u0627\u0645\u0644\u0627
-      \u0631\u0627\u06CC\u06AF\u0627\u0646 \u0647\u0633\u062A \u0648 \u062D\u062A\u06CC
-      \u062A\u0628\u0644\u06CC\u063A \u0647\u0645 \u062A\u0648\u0634 \u0646\u062F\u0627\u0631\u0647."
+      \u06A9\u0646!"
   - Title: "\u0646\u0638\u0631 \u0633\u0646\u062C\u06CC"
-    Message: "\u0627\u06AF\u0647 \u0627\u0632 \u0627\u06CC\u0646 \u0628\u0631\u0646\u0627\u0645\u0647
-      \u06A9\u0627\u0645\u0644\u0627\u064B \u0631\u0627\u06CC\u06AF\u0627\u0646 \u062E\u0648\u0634\u062A
-      \u0627\u0648\u0645\u062F\u0647\u060C \u0628\u0631\u0627\u06CC \u0627\u06CC\u0646\u06A9\u0647
-      \u0628\u0647 \u06A9\u0627\u0631\u0645 \u062F\u0644\u06AF\u0631\u0645 \u0628\u0634\u0645
-      \u06CC\u0647 \u0646\u0638\u0631 \u0645\u062B\u0628\u062A \u0628\u0631\u0627\u0634
-      \u062B\u0628\u062A \u06A9\u0646. \u062A\u0648\u062C\u0647 \u0628\u0641\u0631\u0645\u0627\u0626\u06CC\u062F
-      \u06A9\u0647 \u0627\u06CC\u0646 \u0628\u0631\u0646\u0627\u0645\u0647 \u062D\u062A\u06CC
-      \u062A\u0628\u0644\u06CC\u063A \u0647\u0645 \u0646\u062F\u0627\u0631\u0647
-      \u0648 \u0641\u0642\u0637 \u0628\u0631\u0627\u06CC \u06A9\u0645\u06A9 \u0628\u0647
-      \u0634\u0645\u0627 \u0628\u0631\u0627\u06CC \u0622\u0645\u0648\u0632\u0634
-      \u06A9\u0648\u062F\u06A9\u0627\u0646 \u0633\u0627\u062E\u062A\u0647 \u0634\u062F\u0647."
+    Message: "\u0627\u06AF\u0647 \u0627\u0632 \u0627\u06CC\u0646 \u0628\u0627\u0632\u06CC
+      \u062E\u0648\u0634\u062A \u0627\u0648\u0645\u062F\u0647\u060C \u0628\u0631\u0627\u06CC
+      \u0627\u06CC\u0646\u06A9\u0647 \u0628\u0647 \u06A9\u0627\u0631\u0645 \u062F\u0644\u06AF\u0631\u0645
+      \u0628\u0634\u0645\u060C \u0644\u0637\u0641\u0627\u064B \u06CC\u0647 \u0646\u0638\u0631
+      \u0645\u062B\u0628\u062A \u0628\u0631\u0627\u0634 \u062B\u0628\u062A \u06A9\u0646."
   - Title: "\u0645\u062D\u0635\u0648\u0644\u0627\u062A \u062F\u06CC\u06AF\u0647"
     Message: "\u062F\u0648\u0633\u062A \u062F\u0627\u0631\u06CC \u0627\u0632 \u0633\u0627\u06CC\u0631
       \u0645\u062D\u0635\u0648\u0644\u0627\u062A \u06A9\u0627\u0631\u062E\u0627\u0646\u0647
@@ -669,11 +660,11 @@ MonoBehaviour:
   - SceneName: TitleScreen
     RelationType: 2
     SceneCount: 15
-  _subject: "\u0644\u06CC\u0646\u06A9 \u0622\u0645\u0648\u0632\u0634 \u062D\u06CC\u0648\u0627\u0646\u0627\u062A
-    \u0628\u0647 \u06A9\u0648\u062F\u06A9\u0627\u0646"
-  _text: "\u0622\u0645\u0648\u0632\u0634 \u062D\u06CC\u0648\u0627\u0646\u0627\u062A
-    \u0628\u0647 \u06A9\u0648\u062F\u06A9\u0627\u0646 \u0631\u0648 \u062F\u0627\u0646\u0644\u0648\u062F
-    \u06A9\u0646:   https://cafebazaar.ir/app/{0}"
+  _subject: "\u0644\u06CC\u0646\u06A9 \u0628\u0627\u0632\u06CC \u0622\u0642\u0627
+    \u0631\u0636\u0627 (\u0633\u0647 \u0628\u0639\u062F\u06CC)"
+  _text: "\u0628\u0627\u0632\u06CC \u0622\u0642\u0627 \u0631\u0636\u0627 (\u0633\u0647
+    \u0628\u0639\u062F\u06CC) \u0631\u0648 \u062F\u0627\u0646\u0644\u0648\u062F \u06A9\u0646:  
+    https://cafebazaar.ir/app/{0}"
   _title: "\u0627\u0631\u0633\u0627\u0644 \u0628\u0631\u0627\u06CC ..."
   _ratingURL: bazaar://details?id={0}
   _otherProductURL: bazaar://collection?slug=by_author&aid=117608070773
@@ -738,7 +729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.34901962, g: 0, b: 0.015686275, a: 1}
+  m_Color: {r: 0.20784315, g: 0.43529415, b: 0.5058824, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -882,7 +873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.30980393, g: 0, b: 0.043137256, a: 1}
+  m_Color: {r: 0.23137257, g: 0.25882354, b: 0.3803922, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -890,7 +881,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 1e0fecef0c3dd1e41a3ece4f9bfe4f8a, type: 3}
+    m_Font: {fileID: 12800000, guid: 9e6befce6c4effc40b89fd5bfedf3966, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -915,6 +906,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0.14509805, g: 0, b: 0.003921569, a: 1}
+  m_EffectColor: {r: 0.20784315, g: 0.43529415, b: 0.5058824, a: 1}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
