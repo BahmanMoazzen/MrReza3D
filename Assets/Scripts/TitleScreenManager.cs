@@ -6,6 +6,6 @@ public class TitleScreenManager : MonoBehaviour
     {
         PlayerPrefs.SetInt("DL", iDifficultyLevel);
 
-        BAHMANLoadingManager._INSTANCE._LoadScene((int)GameScenes.Loader);
+        BAHMANLoadingManager._INSTANCE._LoadScene((int)GameScenes.MainGame);
     }
 }

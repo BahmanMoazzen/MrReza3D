@@ -9,7 +9,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
-public enum GameScenes { TitleScreen = 1,Loader =2, MainGame = 3 };
+public enum GameScenes { TitleScreen = 1, MainGame = 2 };
 public class BAHMANLoadingManager : MonoBehaviour
 {
 
