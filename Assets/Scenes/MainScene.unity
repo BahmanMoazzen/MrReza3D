@@ -5,26 +5,26 @@ OcclusionCullingSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_OcclusionBakeSettings:
-    smallestOccluder: 5
-    smallestHole: 0.25
+    smallestOccluder: 3
+    smallestHole: 0.2
     backfaceThreshold: 100
   m_SceneGUID: 0b0f5d75cd3fea64a9bcc100dce7914c
   m_OcclusionCullingData: {fileID: 36300000, guid: 2a5948812bc8aa14a95701fde80997fe, type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 10
+  serializedVersion: 9
   m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 1
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.603
@@ -38,12 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1575954553}
-  m_IndirectSpecularColor: {r: 0.14801304, g: 0.16559143, b: 0.16949081, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 12
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,6 +66,9 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
+    m_FinalGather: 0
+    m_FinalGatherFiltering: 1
+    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -93,7 +96,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 8f2063aee1c131544adcfc4f78210358, type: 2}
+  m_LightingDataAsset: {fileID: 0}
   m_LightingSettings: {fileID: 4890085278179872738, guid: a2f6163588e6e074996614a2b15b04b7, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -487,7 +490,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 256288959963645263, guid: e2fa05d22ec876745aec3dd263e3622f, type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 256288959963645263, guid: e2fa05d22ec876745aec3dd263e3622f, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -511,7 +514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 256288961605839492, guid: e2fa05d22ec876745aec3dd263e3622f, type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 256288961605839492, guid: e2fa05d22ec876745aec3dd263e3622f, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -1672,8 +1675,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44591072}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 0
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 62.054386
@@ -1714,7 +1718,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -2780,43 +2784,43 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5772262963768450425, guid: 97009714dea55914a80a681b3de8f8c6, type: 3}
-      propertyPath: '_audioClips.Array.data[0]'
+      propertyPath: _audioClips.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 45bab7c2b643b7a4da6309e524d64f09, type: 3}
     - target: {fileID: 5772262963768450425, guid: 97009714dea55914a80a681b3de8f8c6, type: 3}
-      propertyPath: '_audioClips.Array.data[1]'
+      propertyPath: _audioClips.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 07b39df2904b33d46a38ab768146c5fa, type: 3}
     - target: {fileID: 5772262963768450425, guid: 97009714dea55914a80a681b3de8f8c6, type: 3}
-      propertyPath: '_audioClips.Array.data[2]'
+      propertyPath: _audioClips.Array.data[2]
       value: 
       objectReference: {fileID: 8300000, guid: 836e61dc0f92ebd469308c90b02cb1a0, type: 3}
     - target: {fileID: 5772262963768450425, guid: 97009714dea55914a80a681b3de8f8c6, type: 3}
-      propertyPath: '_audioClips.Array.data[3]'
+      propertyPath: _audioClips.Array.data[3]
       value: 
       objectReference: {fileID: 8300000, guid: 105445baaa0c37b48a24de8ce4877414, type: 3}
     - target: {fileID: 5772262963768450425, guid: 97009714dea55914a80a681b3de8f8c6, type: 3}
-      propertyPath: '_audioClips.Array.data[4]'
+      propertyPath: _audioClips.Array.data[4]
       value: 
       objectReference: {fileID: 8300000, guid: 7026c592426b9dc40bca42e87e501a34, type: 3}
     - target: {fileID: 5772262963768450425, guid: 97009714dea55914a80a681b3de8f8c6, type: 3}
-      propertyPath: '_audioClips.Array.data[5]'
+      propertyPath: _audioClips.Array.data[5]
       value: 
       objectReference: {fileID: 8300000, guid: 16df9b319dbcd1c4887e6ca8427efbf3, type: 3}
     - target: {fileID: 5772262963768450425, guid: 97009714dea55914a80a681b3de8f8c6, type: 3}
-      propertyPath: '_audioClips.Array.data[6]'
+      propertyPath: _audioClips.Array.data[6]
       value: 
       objectReference: {fileID: 8300000, guid: 19a8bca851cffab4e91d619eee289f0b, type: 3}
     - target: {fileID: 5772262963768450425, guid: 97009714dea55914a80a681b3de8f8c6, type: 3}
-      propertyPath: '_audioClips.Array.data[7]'
+      propertyPath: _audioClips.Array.data[7]
       value: 
       objectReference: {fileID: 8300000, guid: 2446d1629ba81cb4581f7144c306e066, type: 3}
     - target: {fileID: 5772262963768450425, guid: 97009714dea55914a80a681b3de8f8c6, type: 3}
-      propertyPath: '_audioClips.Array.data[8]'
+      propertyPath: _audioClips.Array.data[8]
       value: 
       objectReference: {fileID: 8300000, guid: 8614a67f4020fea4aa369c5f783d336c, type: 3}
     - target: {fileID: 5772262963768450425, guid: 97009714dea55914a80a681b3de8f8c6, type: 3}
-      propertyPath: '_audioClips.Array.data[9]'
+      propertyPath: _audioClips.Array.data[9]
       value: 
       objectReference: {fileID: 8300000, guid: 78d70dc2a531de34080ab5e30aa7fffc, type: 3}
     - target: {fileID: 5818930724277308152, guid: 97009714dea55914a80a681b3de8f8c6, type: 3}
@@ -3003,7 +3007,6 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -4379,8 +4382,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139413348}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 5
@@ -4421,7 +4425,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -6594,8 +6598,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 188666688}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 4
@@ -6636,7 +6641,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -6800,8 +6805,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190583979}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 7.0341144
@@ -6842,7 +6848,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -8370,8 +8376,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 259117823}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 0
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 3.5875678
@@ -8412,7 +8419,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -10180,7 +10187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7101267274021421889, guid: b9f258a086096d24aa7861fa20deed65, type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7101267274021421889, guid: b9f258a086096d24aa7861fa20deed65, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -10264,7 +10271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8679228537195168570, guid: b9f258a086096d24aa7861fa20deed65, type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8679228537195168570, guid: b9f258a086096d24aa7861fa20deed65, type: 3}
       propertyPath: m_BoundingSphereOverride.w
@@ -14042,8 +14049,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451836657}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 6
@@ -14084,7 +14092,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -15361,8 +15369,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 495348332}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 6
@@ -15403,7 +15412,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -16641,8 +16650,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543328389}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 0
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 3.5875678
@@ -16683,7 +16693,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -22554,8 +22564,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 779177393}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 5
@@ -22596,7 +22607,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -24831,8 +24842,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857064185}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 4
@@ -24873,7 +24885,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -25125,15 +25137,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1206005891557034357, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.050762266
+      value: 0.055933177
       objectReference: {fileID: 0}
     - target: {fileID: 1206005891557034357, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00003267389
+      value: -0.5455739
       objectReference: {fileID: 0}
     - target: {fileID: 1206005891557034357, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.6716928
+      value: -1.7799902
       objectReference: {fileID: 0}
     - target: {fileID: 1206005891557034357, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -25141,15 +25153,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1206005891557034357, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1206005891557034357, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1206005891557034357, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163120484117852660, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
+      propertyPath: m_Depth
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163120484117852660, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163120484117852660, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163120484117852660, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4163120484117852660, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4163120484117852660, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
       propertyPath: m_CullingMask.m_Bits
@@ -25197,7 +25229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5578156944471786458, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
       propertyPath: CameraDistance
-      value: 2.6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5578156944471786458, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
       propertyPath: DampingFromCollision
@@ -25209,31 +25241,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7264701658057094737, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.0828276
+      value: 5.323781
       objectReference: {fileID: 0}
     - target: {fileID: 7264701658057094737, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5972378
+      value: 1.6521237
       objectReference: {fileID: 0}
     - target: {fileID: 7264701658057094737, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.207455
+      value: -2.3668013
       objectReference: {fileID: 0}
     - target: {fileID: 7264701658057094737, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6294282
+      value: 0.6204397
       objectReference: {fileID: 0}
     - target: {fileID: 7264701658057094737, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0000038845246
+      value: 0.08361927
       objectReference: {fileID: 0}
     - target: {fileID: 7264701658057094737, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.7770587
+      value: -0.77279663
       objectReference: {fileID: 0}
     - target: {fileID: 7264701658057094737, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000047956287
+      value: 0.10415305
       objectReference: {fileID: 0}
     - target: {fileID: 7264701658057094737, guid: 07b337a05c9fce74289b584b51938fe7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -26802,8 +26834,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967147485}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 5
@@ -26844,7 +26877,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -29112,8 +29145,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056287677}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 6
@@ -29154,7 +29188,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -37516,8 +37550,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311470088}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
@@ -37558,7 +37593,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -44977,8 +45012,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1559201425}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 5
@@ -45019,7 +45055,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -46079,8 +46115,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1575954551}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 1
+  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
@@ -46088,7 +46125,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -46121,7 +46158,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -48760,6 +48797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1653244754}
   - component: {fileID: 1653244756}
+  - component: {fileID: 1653244757}
   m_Layer: 0
   m_Name: RezaFinder
   m_TagString: Untagged
@@ -48833,6 +48871,40 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1653244757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653244753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_BlendUpdateMethod: 1
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+    m_CustomCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1653308873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49387,8 +49459,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1665621021}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 0
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 3.5875678
@@ -49429,7 +49502,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -52079,8 +52152,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775205497}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 5
@@ -52121,7 +52195,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -52568,8 +52642,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791590341}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 5
@@ -52610,7 +52685,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -52958,26 +53033,15 @@ LightProbeGroup:
   m_GameObject: {fileID: 1803106466}
   m_Enabled: 1
   m_SourcePositions:
-  - {x: 7.335048, y: 1, z: 0.89283276}
-  - {x: 7.335048, y: 1, z: -0.8001064}
-  - {x: 7.335048, y: -1, z: 0.89283276}
-  - {x: 7.335048, y: -1, z: -0.8001064}
-  - {x: -1, y: 1, z: 0.89283276}
-  - {x: -1, y: 1, z: -0.8001064}
-  - {x: -1, y: -1, z: 0.89283276}
-  - {x: -1, y: -1, z: -0.8001064}
-  - {x: 1, y: 1, z: 0.89283276}
-  - {x: 1, y: 1, z: -0.8001064}
-  - {x: 1, y: -1, z: 0.89283276}
-  - {x: 1, y: -1, z: -0.8001064}
-  - {x: 2.9833736, y: 1, z: 0.89283276}
-  - {x: 2.9833736, y: 1, z: -0.8001064}
-  - {x: 2.9833736, y: -1, z: 0.89283276}
-  - {x: 2.9833736, y: -1, z: -0.8001064}
-  - {x: 5.192472, y: 1, z: 0.89283276}
-  - {x: 5.192472, y: 1, z: -0.8001064}
-  - {x: 5.192472, y: -1, z: 0.89283276}
-  - {x: 5.192472, y: -1, z: -0.8001064}
+  - {x: 7.335048, y: -0.18184614, z: 0.89283276}
+  - {x: 7.335048, y: -0.18184614, z: -0.8001064}
+  - {x: 7.335048, y: -1, z: 0.14255667}
+  - {x: -1, y: -0.18184614, z: 0.89283276}
+  - {x: -1, y: -0.18184614, z: -0.8001064}
+  - {x: -1, y: -1, z: 0.14255667}
+  - {x: 2.9833736, y: -0.18184614, z: 0.89283276}
+  - {x: 2.9833736, y: -0.18184614, z: -0.8001064}
+  - {x: 2.9833736, y: -1, z: 0.14255667}
   m_Dering: 1
 --- !u!1 &1803688808
 GameObject:
@@ -53468,8 +53532,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818175425}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 0
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 3.5875678
@@ -53510,7 +53575,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -54257,8 +54322,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840834211}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 0
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 3.5875678
@@ -54299,7 +54365,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -55109,8 +55175,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1854913081}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 6
@@ -55151,7 +55218,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -58811,8 +58878,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -59844,8 +59909,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041273860}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 0
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 3.5875678
@@ -59886,7 +59952,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -60269,8 +60335,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2069308836}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 5
@@ -60311,7 +60378,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -60908,8 +60975,6 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
   m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -61306,8 +61371,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140109817}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 10
   m_Type: 2
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 6
@@ -61348,7 +61414,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
