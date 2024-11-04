@@ -1,19 +1,20 @@
 /*
- * Message box Version 1.0
+ * Message box Version 1.2
  * This module shows timed messages on the screen
  * 
  * 
  */
 
-
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
-
-// Message structure to show on screen
+/// <summary>
+/// Message structure to show on screen
+/// </summary>
 class MessageStruct
 {
     public Color _color;
@@ -21,83 +22,190 @@ class MessageStruct
     public float _interval;
 
 }
-
-
 public class BAHMANMessageBoxManager : MonoBehaviour
 {
-
-    // instance to call message box manager
+    #region public methods 
+    /// <summary>
+    /// instance to call message box manager
+    /// </summary>
     public static BAHMANMessageBoxManager _INSTANCE;
-
-    //public procedures to call
-
-
-    // insert message by single text
+    /// <summary>
+    /// decides if the message queue is ready or not
+    /// </summary>
+    public bool IsReady
+    {
+        get
+        {
+            return _messageQueue != null;
+        }
+    }
+    /// <summary>
+    /// insert message by single text
+    /// </summary>
+    /// <param name="iMessage">the message to show</param>
     public void _ShowMessage(string iMessage)
     {
         MessageStruct messageStructure = new MessageStruct();
         messageStructure._color = _DefaultColor;
         messageStructure._interval = _DefaultHideIntervalTime;
-        messageStructure._message = iMessage;
+        messageStructure._message = BAHMANLanguageManager._Instance._Translate(iMessage);
+        //if (_messageQueue == null)
+        //{
+        //    _messageQueue = new Queue<MessageStruct>();
+        //}
+        _messageQueue? .Enqueue(messageStructure);
+
+
+    }
+    /// <summary>
+    /// insert message by single text
+    /// </summary>
+    /// <param name="iMessage">the message to show</param>
+    /// <param name="iInterval">time to display on screen</param>
+    public void _ShowMessage(string iMessage, float iInterval)
+    {
+        MessageStruct messageStructure = new MessageStruct();
+        messageStructure._color = _DefaultColor;
+        messageStructure._interval = iInterval;
+        messageStructure._message = BAHMANLanguageManager._Instance._Translate(iMessage);
+        //if(_messageQueue == null)
+        //{
+        //    _messageQueue = new Queue<MessageStruct> ();
+        //}
         _messageQueue.Enqueue(messageStructure);
 
 
     }
-    // insert message by single text and color
+    /// <summary>
+    /// insert message by single text and color
+    /// </summary>
+    /// <param name="iMessage">the message to display</param>
+    /// <param name="iColor">the color of the text</param>
     public void _ShowMessage(string iMessage, Color iColor)
     {
         MessageStruct messageStructure = new MessageStruct();
         messageStructure._color = iColor;
-        messageStructure._message = iMessage;
+        messageStructure._message = BAHMANLanguageManager._Instance._Translate(iMessage);
         messageStructure._interval = _DefaultHideIntervalTime;
+        //if (_messageQueue == null)
+        //{
+        //    _messageQueue = new Queue<MessageStruct>();
+        //}
         _messageQueue.Enqueue(messageStructure);
 
 
     }
-    // insert message by single text and color and time
+    /// <summary>
+    /// insert message by single text and color and time
+    /// </summary>
+    /// <param name="iMessage">the message to show</param>
+    /// <param name="iColor">the color of the text</param>
+    /// <param name="iInterval">time to display on screen</param>
     public void _ShowMessage(string iMessage, Color iColor, float iInterval)
     {
         MessageStruct messageStructure = new MessageStruct();
         messageStructure._color = iColor;
-        messageStructure._message = iMessage;
+        messageStructure._message = BAHMANLanguageManager._Instance._Translate(iMessage);
         messageStructure._interval = iInterval;
+        //if (_messageQueue == null)
+        //{
+        //    _messageQueue = new Queue<MessageStruct>();
+        //}
         _messageQueue.Enqueue(messageStructure);
+    }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="iTitle"></param>
+    /// <param name="iMessage"></param>
+    /// <param name="iYesButtonText"></param>
+    /// <param name="iNoButtonText"></param>
+    /// <param name="iShowCloseButton"></param>
+    /// <param name="iShowTitleBar"></param>
+    /// <param name="iCloseAction"></param>
+    /// <param name="iYesAction"></param>
+    /// <param name="iNoAction"></param>
 
 
+    public void _ShowYesNoBox(string iTitle, string iMessage, string iYesButtonText, string iNoButtonText, bool iShowCloseButton, bool iShowTitleBar, UnityAction iCloseAction, UnityAction iYesAction, UnityAction iNoAction)
+    {
+        _yesNoController._ShowPanel(BAHMANLanguageManager._Instance._Translate(iTitle), BAHMANLanguageManager._Instance._Translate(iMessage)
+            , BAHMANLanguageManager._Instance._Translate(iYesButtonText), BAHMANLanguageManager._Instance._Translate(iNoButtonText)
+            , iShowCloseButton, iShowTitleBar, iCloseAction, iYesAction, iNoAction); ;
     }
 
-    #region private
+    public void _ShowYesNoBox(string iTitle, string iMessage, UnityAction iYesAction)
+    {
+        _yesNoController._ShowPanel(BAHMANLanguageManager._Instance._Translate(iTitle), BAHMANLanguageManager._Instance._Translate(iMessage)
+            , BAHMANLanguageManager._Instance._Translate(YESTAG)
+            , BAHMANLanguageManager._Instance._Translate(NOTAG)
+            , true, true, null, iYesAction, null);
+    }
 
-    const string _prefabName = "BAHMANMessageBox";
-    //[MenuItem("BAHMAN Unity Assets/Create Message Box Manager", false, 3)]
-    //static void CreateCustomGameObject(MenuCommand menuCommand)
-    //{
+    // only for beyond the red game
+    public void _Taha_ShowYesNoBox(string iTitle, string iMessage, UnityAction iYesAction , UnityAction iExitAction)
+    {
+        _yesNoController._ShowPanel(BAHMANLanguageManager._Instance._Translate(iTitle), BAHMANLanguageManager._Instance._Translate(iMessage)
+            , BAHMANLanguageManager._Instance._Translate(YESTAG)
+            , BAHMANLanguageManager._Instance._Translate(NOTAG)
+            , true, true, iExitAction, iYesAction, iExitAction);
+    }
 
-    //    GameObject newGo = Instantiate(Resources.Load<GameObject>(_prefabName), Vector3.zero, Quaternion.identity);
+    public void _ShowConfirmBox(string iTitle, string iMessage, string iConfirmButtonText, bool iShowCloseButton, bool iShowTitleBar, UnityAction iCloseAction, UnityAction iConfirmAction)
+    {
+        _confirmController._ShowPanel(BAHMANLanguageManager._Instance._Translate(iTitle), BAHMANLanguageManager._Instance._Translate(iMessage)
+            , BAHMANLanguageManager._Instance._Translate(iConfirmButtonText),
+            iShowCloseButton, iShowTitleBar, iCloseAction, iConfirmAction);
+    }
+    public void _ShowConfirmBox(string iTitle, string iMessage)
+    {
+        _confirmController._ShowPanel(BAHMANLanguageManager._Instance._Translate(iTitle), BAHMANLanguageManager._Instance._Translate(iMessage),
+            BAHMANLanguageManager._Instance._Translate(CONFIRMTAG), true, true, null, null);
+    }
+    public void _ShowConfirmBox(string iMessage)
+    {
+        _confirmController._ShowPanel(null, BAHMANLanguageManager._Instance._Translate(iMessage),
+            BAHMANLanguageManager._Instance._Translate(CONFIRMTAG), false, false, null, null);
+    }
+    #endregion
+    #region private methods
 
-    //    //GameObjectUtility.SetParentAndAlign(go, menuCommand.context as GameObject);
-    //    //Undo.RegisterCreatedObjectUndo(go, "Create " + go.name);
-    //    newGo.name = _prefabName;
-    //    Selection.activeObject = newGo;
 
-    //}
-
-    // message text placeholder
+    /// <summary>
+    /// message text placeholder
+    /// </summary>
     [SerializeField] Text _MessageText;
 
-    // message panel to show or hide
+    /// <summary>
+    /// message panel to show or hide
+    /// </summary>
     [SerializeField] GameObject _MessagePanel;
 
-    // default hide interval time
+    /// <summary>
+    /// default hide interval time
+    /// </summary>
     [SerializeField][Range(0, 10)] float _DefaultHideIntervalTime = 2f;
 
 
-    // default hide interval time
-    [SerializeField] Color _DefaultColor = Color.black;
+    /// <summary>
+    /// default hide interval time
+    /// </summary>
+    [SerializeField] Color _DefaultColor = Color.white;
 
 
-    // message queue for storing data
+    /// <summary>
+    /// message queue for storing data
+    /// </summary>
     Queue<MessageStruct> _messageQueue;
+
+
+    YesNoPannelController _yesNoController;
+
+    ConfirmPanelController _confirmController;
+
+    const string YESTAG = "Yes", NOTAG = "No", CONFIRMTAG = "Confirm";
+
+
 
 
     void Awake()
@@ -106,16 +214,22 @@ public class BAHMANMessageBoxManager : MonoBehaviour
         if (_INSTANCE == null)
         {
             _INSTANCE = this;
+            _confirmController = GetComponent<ConfirmPanelController>();
+            _yesNoController = GetComponent<YesNoPannelController>();
+            StartCoroutine(_startupRoutine());
+            DontDestroyOnLoad(this.gameObject);
         }
-        DontDestroyOnLoad(this.gameObject);
+        else
+        {
+            Destroy(gameObject);
+        }
+
 
     }
 
-    void Start()
-    {
+    
 
-        StartCoroutine(_startupRoutine());
-    }
+
     IEnumerator _startupRoutine()
     {
         yield return 0;
@@ -158,6 +272,7 @@ public class BAHMANMessageBoxManager : MonoBehaviour
     }
     #endregion
 
+    
 }
 
 

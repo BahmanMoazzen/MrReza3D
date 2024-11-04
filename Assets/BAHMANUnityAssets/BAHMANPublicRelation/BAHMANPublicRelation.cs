@@ -1,37 +1,27 @@
-using System;
+/*
+ * public relation manager V1.1
+ * manages the messages to persuade player do certain actions on the market
+ */
+
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public enum PublicRelationType { Share, Rate, OtherProduct, Donate ,Message}
-[Serializable]
-public struct PublicRelationSetting
-{
-    public string SceneName;
-    public PublicRelationType RelationType;
-    public int SceneCount;
 
-}
-[Serializable]
-public struct PublicRelationMessageBoxInfo
-{
-    public string Title;
-    public string Message;
-}
 
 public class BAHMANPublicRelation : MonoBehaviour
 {
+    // use to save scene count on PlayerPref
     const string PRPREFIX = "BPR";
 
-    [Header("Global Settings")]
-    [SerializeField] Text _messageBoxTitle;
-    [SerializeField] Text _messageBoxDesc;
-    [SerializeField] Button _messageBoxYes;
-    [SerializeField] GameObject _messageBox;
-    [SerializeField] PublicRelationMessageBoxInfo[] _PRTitle;
-    [SerializeField] PublicRelationSetting[] _AllSettings;
+    [Header("Message Settings")]
+    [Tooltip("Uses to show proper messages")]
+    [SerializeField]
+    PublicRelationMessageInfo[] _Messages;
+    [Tooltip("Settings for page count")]
+    [SerializeField] PublicRelationPageCountSettingInfo _PageCountSettings;
+
     [Header("Share Settings")]
     [Tooltip("sets the subject (primarily used in e-mail applications)")]
     [SerializeField] string _subject;
@@ -40,22 +30,28 @@ public class BAHMANPublicRelation : MonoBehaviour
     [Tooltip("sets the title of the share dialog on Android platform.Has no effect on iOS")]
     [SerializeField] string _title;
 
-    [Header("Rating Settings")]
-    [SerializeField]
-    string _ratingURL;
-    [Header("Other Products Settings")]
-    [SerializeField]
-    string _otherProductURL;
     [Header("Donate Settings")]
     [SerializeField]
     string _donateURL;
 
+    [Header("Intent Settings")]
+    [SerializeField] PublicRelationMarketIntentInfo _MarketIntentSettings;
+
+
+    public static BAHMANPublicRelation _Instance;
 
     private void Awake()
     {
 
-        DontDestroyOnLoad(this);
-        _ClosePanel();
+        if (_Instance == null)
+        {
+            _Instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         SceneManager.sceneLoaded += SceneManager_sceneLoaded;
     }
     private void OnDestroy()
@@ -64,40 +60,57 @@ public class BAHMANPublicRelation : MonoBehaviour
     }
     private void SceneManager_sceneLoaded(Scene iLoadedScene, LoadSceneMode iLoadMode)
     {
+
+
         StopAllCoroutines();
         StartCoroutine(_scenLoadRoutine(iLoadedScene.name));
+
     }
     IEnumerator _scenLoadRoutine(string iSceneName)
     {
         string saveName = $"{PRPREFIX}_{iSceneName}_count";
         int newCount = PlayerPrefs.GetInt(saveName, 0) + 1;
         PlayerPrefs.SetInt(saveName, newCount);
-        foreach (var prs in _AllSettings)
+        foreach (var prs in _PageCountSettings._PageCountSettings)
         {
             if (prs.SceneName.Equals(iSceneName))
             {
                 if (newCount == prs.SceneCount)
                 {
-                    _messageBoxTitle.text = _PRTitle[(int)prs.RelationType].Title;
-                    _messageBoxDesc.text = _PRTitle[(int)prs.RelationType].Message;
-                    _messageBox.SetActive(true);
-                    _messageBoxYes.onClick.AddListener(_ClosePanel);
+
                     switch (prs.RelationType)
                     {
                         case PublicRelationType.Share:
-                            _messageBoxYes.onClick.AddListener(_ShareClicked);
+                            BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox(
+                                BAHMANLanguageManager._Instance._Translate(_Messages[(int)prs.RelationType].Title),
+                                BAHMANLanguageManager._Instance._Translate(_Messages[(int)prs.RelationType].Message),
+                                _ShareClicked);
+
                             break;
                         case PublicRelationType.Rate:
-                            _messageBoxYes.onClick.AddListener(_RateClicked);
+                            BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox(
+                                BAHMANLanguageManager._Instance._Translate(_Messages[(int)prs.RelationType].Title),
+                                BAHMANLanguageManager._Instance._Translate(_Messages[(int)prs.RelationType].Message), _RateClicked);
+
                             break;
                         case PublicRelationType.OtherProduct:
-                            _messageBoxYes.onClick.AddListener(_OtherProductClicked);
+                            BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox(
+                                BAHMANLanguageManager._Instance._Translate(_Messages[(int)prs.RelationType].Title),
+                                BAHMANLanguageManager._Instance._Translate(_Messages[(int)prs.RelationType].Message),
+                                _OtherProductClicked);
+
                             break;
                         case PublicRelationType.Donate:
-                            _messageBoxYes.onClick.AddListener(_DonateClicked);
+                            BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox(
+                                BAHMANLanguageManager._Instance._Translate(_Messages[(int)prs.RelationType].Title),
+                                BAHMANLanguageManager._Instance._Translate(_Messages[(int)prs.RelationType].Message),
+                                _DonateClicked);
                             break;
                         case PublicRelationType.Message:
-                            _messageBoxYes.onClick.AddListener(_MessageClicked);
+                            BAHMANMessageBoxManager._INSTANCE._ShowConfirmBox(
+                                BAHMANLanguageManager._Instance._Translate(_Messages[(int)prs.RelationType].Title),
+                                BAHMANLanguageManager._Instance._Translate(_Messages[(int)prs.RelationType].Message)
+                                );
                             break;
                     }
                     break;
@@ -107,53 +120,117 @@ public class BAHMANPublicRelation : MonoBehaviour
             yield return null;
         }
     }
+
+    public void _PublicRelateWithConfirmation(PublicRelationType iRelationType)
+    {
+
+        switch (iRelationType)
+        {
+            case PublicRelationType.Share:
+                BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox(
+                    BAHMANLanguageManager._Instance._Translate(_Messages[(int)iRelationType].Title),
+                    BAHMANLanguageManager._Instance._Translate(_Messages[(int)iRelationType].Message),
+                    _ShareClicked);
+
+                break;
+            case PublicRelationType.Rate:
+                BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox(
+                    BAHMANLanguageManager._Instance._Translate(_Messages[(int)iRelationType].Title),
+                    BAHMANLanguageManager._Instance._Translate(_Messages[(int)iRelationType].Message), _RateClicked);
+
+                break;
+            case PublicRelationType.OtherProduct:
+                BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox(
+                    BAHMANLanguageManager._Instance._Translate(_Messages[(int)iRelationType].Title),
+                    BAHMANLanguageManager._Instance._Translate(_Messages[(int)iRelationType].Message),
+                    _OtherProductClicked);
+
+                break;
+            case PublicRelationType.Donate:
+                BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox(
+                    BAHMANLanguageManager._Instance._Translate(_Messages[(int)iRelationType].Title),
+                    BAHMANLanguageManager._Instance._Translate(_Messages[(int)iRelationType].Message),
+                    _DonateClicked);
+                break;
+            case PublicRelationType.Message:
+                BAHMANMessageBoxManager._INSTANCE._ShowConfirmBox(
+                    BAHMANLanguageManager._Instance._Translate(_Messages[(int)iRelationType].Title),
+                    BAHMANLanguageManager._Instance._Translate(_Messages[(int)iRelationType].Message)
+                    );
+                break;
+
+        }
+    }
+
+    public void _PublicRelateWithoutConfirmation(PublicRelationType iRelationType)
+    {
+        switch (iRelationType)
+        {
+            case PublicRelationType.Share:
+
+                _ShareClicked();
+
+                break;
+            case PublicRelationType.Rate:
+                _RateClicked();
+
+                break;
+            case PublicRelationType.OtherProduct:
+
+                _OtherProductClicked();
+
+                break;
+            case PublicRelationType.Donate:
+
+                _DonateClicked();
+                break;
+            case PublicRelationType.Message:
+                BAHMANMessageBoxManager._INSTANCE._ShowConfirmBox(
+                    BAHMANLanguageManager._Instance._Translate(_Messages[(int)iRelationType].Title),
+                    BAHMANLanguageManager._Instance._Translate(_Messages[(int)iRelationType].Message)
+                    );
+                break;
+
+        }
+    }
     public void _ShareClicked()
     {
-        NativeShare NS = new NativeShare().SetSubject(_subject).SetText(string.Format(_text, Application.identifier)).SetTitle(_title);
-        Debug.Log(string.Format(_text, Application.identifier));
+        string nsSubject = BAHMANLanguageManager._Instance._Translate(_subject);
+        string nsText = string.Format(BAHMANLanguageManager._Instance._Translate(_text)
+            , Application.identifier //{0}
+            , BAHMANLanguageManager._Instance._Translate(_MarketIntentSettings.MarketName) //{1}
+            );
+        string nsTitle = BAHMANLanguageManager._Instance._Translate(_title);
+        NativeShare NS = new NativeShare()
+            .SetSubject(nsSubject)
+            .SetText(nsText)
+            .SetTitle(nsTitle);
         NS.Share();
-        //_ClosePanel();
-        _RemoveAllYesListeners();
-        
+
     }
     public void _OtherProductClicked()
     {
-        Application.OpenURL(string.Format(_otherProductURL, Application.identifier));
-        Debug.Log(string.Format(_otherProductURL, Application.identifier));
-        //_ClosePanel();
-        _RemoveAllYesListeners();
+        Application.OpenURL(string.Format(_MarketIntentSettings.MarketOtherProductURL, Application.identifier));
 
     }
     public void _RateClicked()
     {
-        Application.OpenURL(string.Format( _ratingURL,Application.identifier));
-        string.Format(string.Format(_ratingURL, Application.identifier));
-        //_ClosePanel();
-        _RemoveAllYesListeners();
+        Application.OpenURL(string.Format(_MarketIntentSettings.MarketRatingURL, Application.identifier));
     }
     public void _DonateClicked()
     {
         Application.OpenURL(_donateURL);
-        string.Format(_donateURL);
-        //_ClosePanel();
-        _RemoveAllYesListeners();
     }
     public void _MessageClicked()
     {
         //Application.OpenURL(_donateURL);
         //_ClosePanel();
-        _RemoveAllYesListeners();
     }
-    public void _ClosePanel()
-    {
-        _messageBox.SetActive(false);
-    }
-    public void _RemoveAllYesListeners()
-    {
-        _messageBoxYes.onClick.RemoveAllListeners();
-        
-    }
+
 
 
 
 }
+
+
+
