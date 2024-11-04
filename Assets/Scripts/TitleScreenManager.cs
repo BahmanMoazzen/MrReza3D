@@ -8,4 +8,12 @@ public class TitleScreenManager : MonoBehaviour
 
         BAHMANLoadingManager._INSTANCE._LoadScene((int)GameScenes.MainGame);
     }
+    public void _OtherPriducts()
+    {
+        BAHMANPublicRelation._Instance._OtherProductClicked();
+    }
+    public void _RateUs()
+    {
+        BAHMANPublicRelation._Instance._RateClicked();
+    }
 }
