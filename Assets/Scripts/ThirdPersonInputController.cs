@@ -31,7 +31,7 @@ public class ThirdPersonInputController : MonoBehaviour
     /// <summary>
     /// the current movement to learp to
     /// </summary>
-    Vector2 _currentMovement ;
+    Vector2 _currentMovement;
 
 
     private void Awake()
@@ -58,6 +58,7 @@ public class ThirdPersonInputController : MonoBehaviour
 
     private void Reza_performed(InputAction.CallbackContext obj)
     {
+        AnalyticsManager._RezaCalled();
         _movementController._DoSpecial();
     }
 
@@ -85,11 +86,11 @@ public class ThirdPersonInputController : MonoBehaviour
         _keyBinding.Player.ResetLook.started -= ResetLook_started;
         _keyBinding.Player.Disable();
     }
-    
+
 
     void Update()
     {
-        
+
         Vector2 move = _move.ReadValue<Vector2>();
         Vector2 look = _look.ReadValue<Vector2>();
         if (move.magnitude > _movementDeadzone)
@@ -102,7 +103,7 @@ public class ThirdPersonInputController : MonoBehaviour
             _movementController._Move(_currentMovement);
             //_movementController._Move((Camera.main.transform.forward * move.y) + (Camera.main.transform.right * move.x));
         }
-        if(look.magnitude > _movementDeadzone)
+        if (look.magnitude > _movementDeadzone)
         {
             _movementController._Look(look);
         }
