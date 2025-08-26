@@ -105,7 +105,7 @@ public class BAHMANMessageBoxManager : MonoBehaviour
     {
         MessageStruct messageStructure = new MessageStruct();
         messageStructure._color = iColor;
-        messageStructure._message = BAHMANLanguageManager._Instance._Translate(iMessage);
+        messageStructure._message = iMessage; //BAHMANLanguageManager._Instance._Translate(iMessage);
         messageStructure._interval = iInterval;
         //if (_messageQueue == null)
         //{

@@ -21,18 +21,21 @@ public class GameManager : MonoBehaviour
 
     IEnumerator _startRoutine()
     {
+
         _soundOnObject.SetActive(true);
         yield return new WaitForSeconds(3.5f);
         _soundOnObject.SetActive(false);
         _mapObject.SetActive(true);
         yield return new WaitForSeconds(3.5f);
         _mapObject.SetActive(false);
-        BAHMANMessageBoxManager._INSTANCE._ShowMessage("به بازی آقارضا خوش آمدید!",Color.white,1.5f);
-        BAHMANMessageBoxManager._INSTANCE._ShowMessage("توی این بازی شما باید آقارضا رو بیدار کنید و نذارید به خواب مرگ فرو بره!",Color.white,3f);
-        BAHMANMessageBoxManager._INSTANCE._ShowMessage("باید دائم صداش کنید!",Color.white,1.5f);
-        BAHMANMessageBoxManager._INSTANCE._ShowMessage("در حالی که صداش می کنید باید توی آپارتمان بگردی و پیداش کنی تا برنده بازی بشی.",Color.white,3f);
-        BAHMANMessageBoxManager._INSTANCE._ShowMessage("زمانت محدوده، پس دست بجنبون.",Color.white,1.5f);
-        BAHMANMessageBoxManager._INSTANCE._ShowMessage("تو پیدا کردنش موفق باشی.",Color.white,1f);
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage("به بازی آقارضا خوش آمدید!", Color.white, 1.5f);
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage("توی این بازی شما باید آقارضا رو بیدار کنید و نذارید به خواب مرگ فرو بره!", Color.white, 3f);
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage("باید دائم صداش کنید!", Color.white, 1.5f);
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage("در حالی که صداش می کنید باید توی آپارتمان بگردی و پیداش کنی تا برنده بازی بشی.", Color.white, 3f);
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage("زمانت محدوده، پس دست بجنبون.", Color.white, 1.5f);
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage("تو پیدا کردنش موفق باشی.", Color.white, 1f);
+        AnalyticsManager._GameLoaded();
+
     }
 
     private void OnDisable()
@@ -69,6 +72,7 @@ public class GameManager : MonoBehaviour
             BAHMANMessageBoxManager._INSTANCE._ShowMessage("آقا رضا بیدار شد!", Color.white, 1.5f);
             BAHMANMessageBoxManager._INSTANCE._ShowMessage("شما برنده شدید!", Color.white, 1.5f);
             BAHMANMessageBoxManager._INSTANCE._ShowMessage("اگه دوست داشتی سختی های دیگه رو امتحان کن", Color.white, 2.5f);
+            AnalyticsManager._GameWon();
         }
     }
 
@@ -83,7 +87,7 @@ public class GameManager : MonoBehaviour
             BAHMANMessageBoxManager._INSTANCE._ShowMessage("متأسفانه آقا رضا مرد!", Color.white, 2f);
             BAHMANMessageBoxManager._INSTANCE._ShowMessage("شما باختید!", Color.white, 1.5f);
             BAHMANMessageBoxManager._INSTANCE._ShowMessage("دوباره امتحان کن", Color.white, 2.5f);
-            
+            AnalyticsManager._GameLost();
         }
     }
 
@@ -98,10 +102,13 @@ public class GameManager : MonoBehaviour
             BAHMANMessageBoxManager._INSTANCE._ShowMessage("زمانت به پایان رسید!", Color.white, 2f);
             BAHMANMessageBoxManager._INSTANCE._ShowMessage("شما باختید!", Color.white, 1.5f);
             BAHMANMessageBoxManager._INSTANCE._ShowMessage("دوباره امتحان کن", Color.white, 2.5f);
+            AnalyticsManager._TimeUp();
         }
     }
     public void _ResetGame()
     {
+        AnalyticsManager._GameRestarted();
         BAHMANLoadingManager._INSTANCE._LoadScene((int)GameScenes.TitleScreen);
+
     }
 }
