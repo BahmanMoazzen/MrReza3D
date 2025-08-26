@@ -1,6 +1,8 @@
-using UnityEngine.Analytics;
 using System.Collections.Generic;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public static class AnalyticsManager
 {
@@ -69,5 +71,14 @@ public static class AnalyticsManager
     {
 
         Analytics.CustomEvent(GAME_RESTARTED);
+    }
+    static AnalyticsManager()
+    {
+        Debug.Log("AnalyticsManager initialized");
+        // Static constructor to ensure the class is initialized before use
+        UnityServices.InitializeAsync();
+
+        AnalyticsService.Instance.StartDataCollection();
+
     }
 }
