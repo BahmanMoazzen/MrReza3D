@@ -107,6 +107,7 @@ public class GameManager : MonoBehaviour
     }
     public void _ResetGame()
     {
+        AdvertismentManager._Instance._ShowAd();
         AnalyticsManager._GameRestarted();
         BAHMANLoadingManager._INSTANCE._LoadScene((int)GameScenes.TitleScreen);
 
